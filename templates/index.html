@@ -1,0 +1,289 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!--First Step-->
+
+    <!-- <form method="post" novalidate>
+            {% csrf_token %} 
+            {{ form.as_table }}
+            <button type="submit">Submit</button>
+        </form> -->
+
+
+    <!--Second Step-->
+
+    <!-- <form method="post" novalidate>
+            {% csrf_token %}
+            <table border="1">
+                {{ form }}
+            </table>
+            <button type="submit">Submit</button>
+        </form> -->
+
+    <!-- Third Step-->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+        {% endfor %}
+
+        <table border="1">
+            {% for field in form.visible_fields %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ field.help_text }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- Fourth Step -->
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <ul>
+            {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% for hidden_field in form.hidden_fields %}
+        {% if hidden_field.errors %}
+        <ul>
+            {% for error in hidden_field.errors %}
+            <li>(Hidden field {{ hidden_field.name }}) {{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {{ hidden_field }}
+        {% endfor %}
+
+        <table border="1">
+            {% for field in form.visible_fields %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                    {% if field.errors %}
+                    <ul>
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {{ field }}
+                    {% if field.help_text %}
+                    <br />{{ field.help_text }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- Fifth Step -->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {{ form.source.errors }}
+        {{ form.source }}
+
+        <table border="1">
+
+            <tr>
+                <th>{{ form.name.label_tag }}</th>
+                <td>
+                    {{ form.name.errors }}
+                    {{ form.name }}
+                </td>
+            </tr>
+
+            <tr>
+                <th>{{ form.email.label_tag }}</th>
+                <td>
+                    {{ form.email.errors }}
+                    {{ form.email }}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.phone.label_tag }}</th>
+                <td>
+                    {{ form.phone.errors }}
+                    {{ form.phone }}
+                </td>
+            </tr>
+
+            <tr>
+                <th>{{ form.message.label_tag }}</th>
+                <td>
+                    {{ form.message.errors }}
+                    {{ form.message }}
+                    <br />
+                    {{ form.message.help_text }}
+                </td>
+            </tr>
+
+        </table>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- Sixth Step -->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+        {% endfor %}
+
+        <table border="1">
+            {% for field in form.visible_fields %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                    {{ field.errors }}
+                    {% render_field field style="border: 2px dashed red;" placeholder=field.name %}
+                    {{ field.help_text }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <!-- Seventh Step -->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+
+    <!-- Eight Step -->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {% render_field field class="form-control" %}
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+
+    <!-- Nineth Step -->
+
+    <!-- <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field }}
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+            {{ error }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            {{ field.label_tag }}
+
+            {% if form.is_bound %}
+            {% if field.errors %}
+            {% render_field field class="form-control is-invalid" %}
+            {% for error in field.errors %}
+            <div class="invalid-feedback">
+                {{ error }}
+            </div>
+            {% endfor %}
+            {% else %}
+            {% render_field field class="form-control is-valid" %}
+            {% endif %}
+            {% else %}
+            {% render_field field class="form-control" %}
+            {% endif %}
+
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+
+    <!-- Tenth Step -->
+
+    <div class="container my-5">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% include 'bs4_form.html' with form=form %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+
+</body>
+
+</html>
